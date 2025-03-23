@@ -44,7 +44,7 @@ const Hero = ({ activeSection }) => {
         >
           <motion.div variants={itemVariants} className="inline-block mb-6">
             <img
-              src="../../public/Profile.jpg"
+              src="/Profile.jpg"
               className="w-40 rounded-full shadow-lg"
             />
           </motion.div>

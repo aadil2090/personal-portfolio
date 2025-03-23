@@ -27,7 +27,7 @@ const Contact = () => {
         <div className="mr-4 text-gray-600">06/10</div>
         <div className="font-bold">NEXT CHAPTER</div>
         <div className="ml-4 absolute top-1.5 left-42">
-          <img src="../../public/NextIcon.svg" className="h-4" />
+          <img src="/NextIcon.svg" className="h-4" />
         </div>
       </div>
       <div className="w-[75%]">

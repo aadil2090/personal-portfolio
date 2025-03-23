@@ -22,7 +22,7 @@ const Projects = () => {
         <div className="mr-4 text-gray-600">05/10</div>
         <div className="font-bold">NEXT CHAPTER</div>
         <div className="ml-4 absolute top-1.5 left-42">
-          <img src="../../public/NextIcon.svg" className="h-4" />
+          <img src="/NextIcon.svg" className="h-4" />
         </div>
       </div>
       <div className="w-[75%]">
@@ -43,7 +43,7 @@ const Projects = () => {
             className="p-6 rounded-lg cursor-pointer overflow-hidden"
           >
             <img
-              src="../../public/Ride-Share.png"
+              src="/Ride-Share.png"
               className="h-44 border-2 border-white rounded-2xl transition-transform duration-300 hover:scale-110"
             />
             <div className="font-bold text-2xl pt-4 pb-1 px-2">Ride Share</div>
@@ -62,7 +62,7 @@ const Projects = () => {
             className="p-6 rounded-lg cursor-pointer"
           >
             <img
-              src="../../public/TajmahalBeverages.png"
+              src="/TajmahalBeverages.png"
               className="h-44 border-2 border-white rounded-2xl w-full"
             />
             <div>
@@ -87,7 +87,7 @@ const Projects = () => {
             className="p-6 rounded-lg cursor-pointer"
           >
             <img
-              src="../../public/Portfolio.png"
+              src="/Portfolio.png"
               className="h-44 border-2 border-white rounded-2xl"
             />
             <div>
