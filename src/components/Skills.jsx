@@ -20,7 +20,7 @@ const Skills = () => {
       transition={{ duration: 0.8 }}
     >
       <div className="flex text-sm items-center relative">
-        <div className="mr-4 text-gray-600">03/10</div>
+        <div className="mr-4 text-gray-600">04/07</div>
         <div className="font-bold">NEXT CHAPTER</div>
         <div className="ml-4 absolute top-1.5 left-42">
           <img src="/NextIcon.svg" className="h-4" />
@@ -35,12 +35,14 @@ const Skills = () => {
           className="text-xl grid grid-cols-2 gap-8"
         >
           {[
-            { name: "CSS", level: 70 },
-            { name: "HTML", level: 80 },
-            { name: "JAVASCRIPT", level: 90 },
-            { name: "REACT", level: 90 },
-            { name: "C#", level: 60 },
-            { name: "MYSQL", level: 60 },
+            { name: "React", level: 90 },
+            { name: "JavaScript/TypeScript", level: 85 },
+            { name: "Tailwind CSS", level: 85 },
+            { name: "API Integration", level: 80 },
+            { name: "C#/.NET", level: 75 },
+            { name: "SQL", level: 75 },
+            { name: "UI/UX Design", level: 80 },
+            { name: "Performance Optimization", level: 85 }
           ].map((skill, index) => (
             <div key={index} className="py-4">
               <div className="flex justify-between">
@@ -49,9 +51,13 @@ const Skills = () => {
               </div>
               <div className="relative">
                 <div className="absolute h-[3px] w-[100%] bg-white opacity-10"></div>
-                <div
-                  className={`absolute h-[3px] w-[${skill.level}%] bg-white z-10`}
-                ></div>
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${skill.level}%` }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  className="absolute h-[3px] bg-white"
+                ></motion.div>
               </div>
             </div>
           ))}

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 
-const Experiences = () => {
-  // Animation variants for entries
+const Education = () => {
   const entryVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
@@ -9,7 +8,7 @@ const Experiences = () => {
 
   return (
     <motion.section
-      id="experiences"
+      id="education"
       className="px-8 pb-32"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -18,21 +17,21 @@ const Experiences = () => {
     >
       {/* Header */}
       <div className="flex items-center text-sm mb-12">
-        <div className="mr-4 text-gray-600">04/07</div>
+        <div className="mr-4 text-gray-600">05/07</div>
         <div className="font-bold">NEXT CHAPTER</div>
       </div>
 
       {/* Main Content */}
       <div className="w-2/3">
         {/* Title */}
-        <div className="text-5xl pb-16 font-bold">EXPERIENCES</div>
+        <div className="text-5xl pb-16 font-bold">EDUCATION</div>
 
         {/* Timeline */}
         <div className="relative">
           {/* Vertical Line */}
           <div className="absolute left-4 top-0 w-[2px] h-full bg-white"></div>
 
-          {/* Experience 1 */}
+          {/* Education 1 */}
           <motion.div
             variants={entryVariants}
             initial="hidden"
@@ -42,24 +41,27 @@ const Experiences = () => {
           >
             <div className="flex items-center mb-4">
               <div className="text-gray-500 text-sm w-20">
-                NOV 2023 - FEB 2025
+                2023
               </div>
               <div className="ml-12">
-                <div className="text-2xl font-bold">APPGAMBIT</div>
-                <div className="text-lg text-gray-300">REACT DEVELOPER</div>
+                <div className="text-2xl font-bold">
+                  DA-IICT
+                </div>
+                <div className="text-lg text-gray-300">
+                  MSc. INFORMATION TECHNOLOGY
+                </div>
               </div>
             </div>
             <div className="ml-32 text-gray-300">
-              • Built & launched 4 full-scale web applications from scratch
-              • Developed Guardian Anjel - a real-time Military Incident Command Dashboard
-              • Engineered Active Inventory - reducing manual errors by 70%
-              • Created Shore Simple - a rental listing platform with interactive maps
-              • Reduced API response time by 15% using optimized Axios calls & caching
-              • Collaborated using Git, Asana, and Agile methodologies
+              • GPA: 7.1
+              • Built a Ride Sharing Web Application as a major project
+              • Focus on modern web technologies and software development
+              • Specialized in frontend development and UI/UX design
+              • Active member of the Web Development Club
             </div>
           </motion.div>
 
-          {/* Experience 2 */}
+          {/* Education 2 */}
           <motion.div
             variants={entryVariants}
             initial="hidden"
@@ -69,22 +71,23 @@ const Experiences = () => {
           >
             <div className="flex items-center mb-4">
               <div className="text-gray-500 text-sm w-20">
-                JAN 2023 - JULY 2023
+                2021
               </div>
               <div className="ml-12">
                 <div className="text-2xl font-bold">
-                  TRIPTA INNOVATIONS PVT. LTD.
+                  SDJ INTERNATIONAL COLLEGE
                 </div>
                 <div className="text-lg text-gray-300">
-                  SOFTWARE DEVELOPER INTERN
+                  BACHELOR OF COMPUTER APPLICATIONS
                 </div>
               </div>
             </div>
             <div className="ml-32 text-gray-300">
-              • Enhanced Radix Accounting Software using C# and .NET
-              • Improved report generation by 20%
-              • Developed authentication & role-based access
-              • Refactored SQL queries for faster database performance
+              • GPA: 7.5
+              • Developed The Tajmahal Beverages e-commerce platform
+              • Core focus on programming fundamentals and web development
+              • Led the college coding club and organized tech events
+              • Received recognition for academic excellence
             </div>
           </motion.div>
         </div>
@@ -93,4 +96,4 @@ const Experiences = () => {
   );
 };
 
-export default Experiences;
+export default Education;

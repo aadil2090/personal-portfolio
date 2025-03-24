@@ -24,7 +24,7 @@ const Services = () => {
       transition={{ duration: 0.8 }}
     >
       <div className="flex text-sm items-center relative">
-        <div className="mr-4 text-gray-600">02/10</div>
+        <div className="mr-4 text-gray-600">03/07</div>
         <div className="font-bold">NEXT CHAPTER</div>
         <div className="ml-4 absolute top-1.5 left-42">
           <img src="/NextIcon.svg" className="h-4" />
@@ -47,13 +47,14 @@ const Services = () => {
             className="p-6 rounded-lg"
           >
             <div className="text-5xl pb-6 font-bold opacity-70">#1</div>
-            <div className="text-2xl font-bold pb-6 ">Web Development</div>
+            <div className="text-2xl font-bold pb-6">Frontend Development</div>
             <div>
-              I'm freelance webdeveloper lorem ipsum dolor sit amet, consetetur
-              sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-              accusam et justo duo dolores et ea rebum. Stet clita kasd
-              gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              Specialized in building modern web applications using React and related technologies. 
+              Expert in creating responsive, performant UIs with a focus on:
+              • Component architecture
+              • State management
+              • API integration
+              • Performance optimization
             </div>
           </motion.div>
           <motion.div
@@ -64,14 +65,15 @@ const Services = () => {
             className="p-6 rounded-lg"
           >
             <div className="text-5xl pb-6 font-bold opacity-70">#2</div>
-            <div className="text-2xl font-bold pb-6">Web Designing</div>
-            <div></div>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing
-            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-            magna aliquyam erat.
+            <div className="text-2xl font-bold pb-6">UI/UX Design</div>
+            <div>
+              Creating intuitive and beautiful user interfaces using modern design tools and frameworks:
+              • Tailwind CSS expertise
+              • Modern UI components
+              • Responsive layouts
+              • Interactive animations
+              • User-centric design
+            </div>
           </motion.div>
           <motion.div
             variants={cardVariants}
@@ -81,13 +83,15 @@ const Services = () => {
             className="p-6 rounded-lg"
           >
             <div className="text-5xl pb-6 font-bold opacity-70">#3</div>
-            <div className="text-2xl font-bold pb-6">Web Consulting</div>
-            <div></div>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna. Lorem ipsum
-            dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-            voluptua.
+            <div className="text-2xl font-bold pb-6">Full Stack Solutions</div>
+            <div>
+              Experience in end-to-end web application development:
+              • Backend integration (C#, .NET)
+              • Database design (SQL)
+              • Authentication systems
+              • API development
+              • Performance optimization
+            </div>
           </motion.div>
         </motion.div>
       </div>

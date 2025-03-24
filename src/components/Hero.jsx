@@ -7,8 +7,9 @@ const navItems = [
   { id: "services", label: "MY SERVICES", num: "03" },
   { id: "skills", label: "SKILLS", num: "04" },
   { id: "experiences", label: "EXPERIENCES", num: "05" },
-  { id: "projects", label: "PROJECTS", num: "06" },
-  { id: "contact", label: "CONTACT", num: "07" },
+  { id: "education", label: "EDUCATION", num: "06" },
+  { id: "projects", label: "PROJECTS", num: "07" },
+  { id: "contact", label: "CONTACT", num: "08" },
 ];
 
 const Hero = ({ activeSection }) => {
@@ -31,7 +32,7 @@ const Hero = ({ activeSection }) => {
   };
 
   return (
-    <main
+    <motion.section
       className={`h-screen flex items-center ${themes[theme].background} ${themes[theme].text}`}
       id="top"
     >
@@ -100,7 +101,7 @@ const Hero = ({ activeSection }) => {
                 className={`flex items-center cursor-pointer group border-l-2 pl-6 transition-all duration-300 ${
                   activeSection === nav.id
                     ? "border-l-white opacity-100"
-                    : "border-l-gray-600 opacity-70"
+                    : "border-l-white opacity-30"
                 }`}
                 onClick={() => scrollToSection(nav.id)}
               >
@@ -113,13 +114,13 @@ const Hero = ({ activeSection }) => {
               </motion.a>
             ))}
           </div>
-          <div className="pt-8 pl-6 border-l-2 border-l-gray-600">
+          <div className="pt-8 pl-7">
             <div>shaikhaadil3927@gmail.com</div>
             <div>+91-79905 12804</div>
           </div>
         </motion.div>
       </div>
-    </main>
+    </motion.section>
   );
 };
 

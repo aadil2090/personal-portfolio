@@ -30,7 +30,7 @@ const AboutMe = () => {
         className="text-sm items-center relative"
       >
         <div className="flex text-sm items-center relative">
-          <div className="mr-4 text-gray-600">01/10</div>
+          <div className="mr-4 text-gray-600">02/07</div>
           <div className="font-bold">NEXT CHAPTER</div>
           <div className="ml-4 absolute top-1.5 left-42">
             <img src="/NextIcon.svg" className="h-4" />
@@ -46,31 +46,27 @@ const AboutMe = () => {
             className="text-xl flex flex-col gap-8"
           >
             <motion.p variants={paraVariants}>
-              I'm freelance webdeveloper lorem ipsum dolor sit amet, consetetur
-              sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-              accusam et justo duo dolores et ea rebum. Stet clita kasd
-              gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              I'm a passionate frontend developer with a strong focus on React and modern web technologies. Currently working as a React Developer in Surat, Gujarat, I specialize in building full-scale web applications with emphasis on UI/UX and performance optimization.
             </motion.p>
+
             <motion.p variants={paraVariants}>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur
-              sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-              accusam et justo duo dolores et ea rebum. Stet clita kasd
-              gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              With a Master's degree in Information Technology from DA-IICT and hands-on experience at APPGAMBiT, I've successfully built and launched multiple web applications, reducing API response times and implementing efficient solutions.
             </motion.p>
+
             <motion.p variants={paraVariants}>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna. Lorem
-              ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-              eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-              sed diam voluptua. At vero eos et accusam et justo duo dolores et
-              ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-              Lorem ipsum dolor sit amet.
+              My expertise includes React, TypeScript, and modern frontend tools. I'm particularly interested in performance optimization and modern UI development, always staying updated with the latest web technologies and best practices.
             </motion.p>
+
+            <motion.div variants={paraVariants} className="flex gap-8 mt-4">
+              <div>
+                <div className="text-6xl font-bold">4+</div>
+                <div className="text-sm mt-2">COMPLETED PROJECTS</div>
+              </div>
+              <div>
+                <div className="text-6xl font-bold">2+</div>
+                <div className="text-sm mt-2">YEARS EXPERIENCE</div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </motion.div>

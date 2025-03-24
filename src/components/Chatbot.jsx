@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Info } from "../Info";
 import { useTheme } from "../context/ThemeContext.jsx";
+import { personalInfo } from "../data/personalInfo";
+import axios from "axios";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,10 +10,9 @@ const Chatbot = () => {
   const [isTyping, setIsTyping] = useState(false);
   const { theme, themes } = useTheme();
   const [messages, setMessages] = useState([
-    { hideInChat: true, role: "model", text: Info },
     {
       role: "model",
-      text: `Hey there! 👋 I'm here to assist you. Feel free to ask me about my projects, skills, or anything else!`,
+      text: `Hey there! 👋 I'm Aadil's AI assistant. Feel free to ask me about his skills, experience, or projects!`,
     },
   ]);
 
@@ -31,54 +31,60 @@ const Chatbot = () => {
     setIsOpen((prev) => !prev);
   }, []);
 
-  const updateHistory = (text) => {
-    setIsTyping(false);
-    setMessages((prev) => [
-      ...prev.filter((p) => p.text !== "Thinking..."),
-      { role: "model", text },
-    ]);
-  };
-
-  const generateBotResponse = async (history) => {
-    history = history.map(({ role, text }) => ({ role, parts: [{ text }] }));
-    const req = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ contents: history }),
-    };
-
+  const generateResponse = async (query) => {
     try {
-      const res = await fetch(import.meta.env.VITE_API_URL, req);
-      const data = await res.json();
-      if (!res.ok)
-        throw new Error(data.error.message || "Something went wrong");
+      // Check if it's a greeting
+      const isGreeting = /^(hi|hello|hey|greetings|hi there|hello there)$/i.test(query.trim());
 
-      const apiResponse = data.candidates[0].content.parts[0].text
+      const prompt = isGreeting ? 
+        "Respond with a brief, friendly greeting as Aadil's AI assistant. Keep it under 15 words." :
+        `You are an AI assistant for Aadil's portfolio. Answer this question: "${query}"
+
+Based on this information:
+${personalInfo}
+
+Response Guidelines:
+1. Be concise - keep responses under 100 words unless specifically asked for details
+2. Format lists with • bullet points and proper spacing
+3. Break long responses into short paragraphs
+4. Links are already in markdown format - use them as is
+5. For skills/technologies, group them by category with bullet points
+6. If asking for clarification, list 2-3 clear options with bullet points`;
+
+      const response = await axios.post(import.meta.env.VITE_API_URL, {
+        contents: [{
+          parts: [{ text: prompt }]
+        }]
+      });
+
+      let formattedResponse = response.data.candidates[0].content.parts[0].text
         .replace(/[*_]/g, "")
-        .replace(/\s+/g, " ")
+        .replace(/\n{3,}/g, "\n\n") // Remove extra newlines
         .trim();
-      updateHistory(apiResponse);
+
+      // Convert markdown links to HTML
+      formattedResponse = formattedResponse.replace(
+        /\[([^\]]+)\]\(([^)]+)\)/g,
+        '<a href="$2" target="_blank" class="text-blue-400 hover:text-blue-300 underline">$1</a>'
+      );
+
+      return formattedResponse;
     } catch (err) {
       console.error(err);
-      updateHistory("Sorry, I encountered an error. Please try again.");
+      return "Sorry, I encountered an error. Please try again.";
     }
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!msg.trim()) return;
+
     setMessages((prev) => [...prev, { text: msg, role: "user" }]);
     setIsTyping(true);
     setMsg("");
 
-    setTimeout(() => {
-      generateBotResponse([
-        ...messages,
-        {
-          role: "user",
-          text: `Using the details provided above, please address this query: ${msg}`,
-        },
-      ]);
-    }, 600);
+    const response = await generateResponse(msg);
+    setIsTyping(false);
+    setMessages((prev) => [...prev, { role: "model", text: response }]);
   };
 
   const handleKeyPress = (e) => {
@@ -160,7 +166,7 @@ const Chatbot = () => {
                             : themes[theme].chatMessageBackground || "bg-zinc-900 text-white"
                         }`}
                         style={{
-                          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.2)",
                         }}
                       >
                         {message.text}

@@ -24,7 +24,7 @@ const Contact = () => {
       transition={{ duration: 0.8 }}
     >
       <div className="flex text-sm items-center relative">
-        <div className="mr-4 text-gray-600">06/10</div>
+        <div className="mr-4 text-gray-600">07/08</div>
         <div className="font-bold">NEXT CHAPTER</div>
         <div className="ml-4 absolute top-1.5 left-42">
           <img src="/NextIcon.svg" className="h-4" />
@@ -46,8 +46,16 @@ const Contact = () => {
           >
             <div className="font-bold opacity-60 pt-4 pb-6">STAY IN TOUCH</div>
             <div>
-              <div className="text-xl py-2">shaikhaadil3927@gmail.com</div>
-              <div className="text-xl">+91-79905 12804</div>
+              <div className="text-xl py-2">
+                <a href="mailto:shaikhaadil3927@gmail.com" className="hover:text-blue-400 transition-colors">
+                  shaikhaadil3927@gmail.com
+                </a>
+              </div>
+              <div className="text-xl">
+                <a href="tel:+917990512804" className="hover:text-blue-400 transition-colors">
+                  +91-79905 12804
+                </a>
+              </div>
             </div>
           </motion.div>
           <motion.div
@@ -56,29 +64,24 @@ const Contact = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <div className="font-bold opacity-60 pt-4 pb-6">SOCIAL</div>
+            <div className="font-bold opacity-60 pt-4 pb-6">SOCIAL MEDIA</div>
             <div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                className="text-xl py-1"
-              >
-                Facebook
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                className="text-xl py-1"
+              <a 
+                href="https://www.linkedin.com/in/aadilshaikh1920" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-xl py-2 block hover:text-blue-400 transition-colors"
               >
                 LinkedIn
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                className="text-xl py-1"
+              </a>
+              <a 
+                href="https://github.com/aadil2090" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-xl py-2 block hover:text-blue-400 transition-colors"
               >
-                Twitter
-              </motion.div>
+                GitHub
+              </a>
             </div>
           </motion.div>
           <motion.div
@@ -87,81 +90,48 @@ const Contact = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <div className="font-bold opacity-60 pt-4 pb-6">ADDRESS</div>
-            <div>
-              <div className="text-xl pb-1">10/2057, Bhagatalav,</div>
-              <div className="text-xl pb-1">Surat,</div>
-              <div className="text-xl pb-1">Gujarat - 395003.</div>
+            <div className="font-bold opacity-60 pt-4 pb-6">LOCATION</div>
+            <div className="text-xl">
+              Surat, Gujarat<br />
+              India
             </div>
           </motion.div>
         </motion.div>
-
-        <motion.div
-          initial={{ x: "-100vw" }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.2, ease: "easeOut", delay: 1.0 }}
-          className="pt-20"
+        <motion.form
+          variants={formVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="mt-16 grid grid-cols-2 gap-8"
         >
-          <div className="text-2xl font-bold">LEAVE A MESSAGE</div>
-          <div>
-            <motion.div
-              variants={formVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="flex w-full gap-8 pb-10 pt-4"
-            >
-              <div className="w-1/2">
-                <div className="py-2 font-bold">NAME</div>
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  className="border-b border-b-gray-500 focus:border-b-white w-full outline-none py-3"
-                />
-              </div>
-              <div className="w-1/2">
-                <div className="py-2 font-bold">E-MAIL</div>
-                <input
-                  type="text"
-                  placeholder="@"
-                  className="border-b border-b-gray-500 focus:border-b-white w-full outline-none py-3"
-                />
-              </div>
-            </motion.div>
-            <motion.div
-              variants={formVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="py-2 font-bold">MESSAGE</div>
-              <textarea
-                placeholder="Your message"
-                rows={4}
-                className="border-b border-b-gray-500 focus:border-b-white w-full outline-none py-3"
-              />
-            </motion.div>
-            <motion.div
-              variants={formVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="mb-20 mt-8"
-            >
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  background: "#fff",
-                  color: "#000",
-                }}
-                transition={{ duration: 0.3 }}
-                className="border-2 rounded-md px-10 py-2 font-bold cursor-pointer"
-              >
-                SEND
-              </motion.button>
-            </motion.div>
+          <div className="flex flex-col gap-2">
+            <label className="font-bold opacity-60">NAME</label>
+            <input
+              type="text"
+              className="bg-transparent border-b border-white focus:outline-none py-2"
+            />
           </div>
-        </motion.div>
+          <div className="flex flex-col gap-2">
+            <label className="font-bold opacity-60">EMAIL</label>
+            <input
+              type="email"
+              className="bg-transparent border-b border-white focus:outline-none py-2"
+            />
+          </div>
+          <div className="col-span-2 flex flex-col gap-2">
+            <label className="font-bold opacity-60">MESSAGE</label>
+            <textarea
+              className="bg-transparent border-b border-white focus:outline-none py-2 min-h-[100px] resize-none"
+            ></textarea>
+          </div>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-8 bg-white text-black px-8 py-3 rounded-lg w-fit"
+          >
+            Send Message
+          </motion.button>
+        </motion.form>
       </div>
       {/* Optional footer marker */}
       <div className="text-gray-600 mt-4">07/10</div>

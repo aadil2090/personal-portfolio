@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useTheme } from "../context/ThemeContext.jsx";
 
-const Header = () => {
+const Header = ({ activeSection }) => {
   const { theme, setTheme, themes } = useTheme();
 
   const themeColors = [
@@ -10,6 +10,7 @@ const Header = () => {
     { color: "bg-sky-400", theme: "sky" },
     { color: " bg-emerald-400", theme: "emerald" },
   ];
+
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -30,7 +31,6 @@ const Header = () => {
             </motion.div>
           ))}
         </div>
-        <div></div>
       </div>
     </motion.header>
   );

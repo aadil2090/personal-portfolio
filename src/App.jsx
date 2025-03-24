@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
+import Education from "./components/Education";
 import Experiences from "./components/Experiences";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -13,16 +14,8 @@ import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import Chatbot from "./components/Chatbot";
 
 function App() {
-  const [activeSection, setActiveSection] = useState("top");
+  const [activeSection, setActiveSection] = useState("hero");
   const { theme, themes } = useTheme();
-
-  // const scrollToSection = (id) => {
-  //   const element = document.getElementById(id);
-  //   if (id) {
-  //     element.scrollIntoView({ behavior: "smooth" });
-  //     setTimeout(() => setActiveSection(id), 600);
-  //   }
-  // };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -55,7 +48,6 @@ function App() {
       >
         <Header />
         <Hero
-          // scrollToSection={scrollToSection}
           activeSection={activeSection}
           setActiveSection={setActiveSection}
         />
@@ -63,6 +55,7 @@ function App() {
         <Services />
         <Skills />
         <Experiences />
+        <Education />
         <Projects />
         <Contact />
         <Chatbot />
