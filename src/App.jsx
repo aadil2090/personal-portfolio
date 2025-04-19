@@ -41,7 +41,7 @@ function App() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="bg-black text-white"
+      className="bg-black text-white w-full"
     >
       <div
         className={`${themes[theme].background} ${themes[theme].text} ${themes[theme].border}`}

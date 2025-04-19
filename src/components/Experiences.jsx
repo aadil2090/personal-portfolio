@@ -18,18 +18,18 @@ const Experiences = () => {
     >
       {/* Header */}
       <div className="flex items-center text-sm mb-12">
-        <div className="mr-4 text-gray-600">04/07</div>
+        <div className="mr-4 text-gray-600">05/08</div>
         <div className="font-bold">NEXT CHAPTER</div>
       </div>
 
       {/* Main Content */}
-      <div className="w-2/3">
+      <div className="w-full">
         {/* Title */}
         <div className="text-5xl pb-16 font-bold">EXPERIENCES</div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Vertical Line */}
+          {/* Vertical Line */} 
           <div className="absolute left-4 top-0 w-[2px] h-full bg-white"></div>
 
           {/* Experience 1 */}
@@ -38,7 +38,7 @@ const Experiences = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="ml-8 mb-12"
+            className="ml-8 mb-12 w-full md:w-2/3"
           >
             <div className="flex items-center mb-4">
               <div className="text-gray-500 text-sm w-20">
@@ -50,11 +50,10 @@ const Experiences = () => {
               </div>
             </div>
             <div className="ml-32 text-gray-300">
-              • Built & launched 4 full-scale web applications from scratch
-              • Developed Guardian Anjel - a real-time Military Incident Command Dashboard
-              • Engineered Active Inventory - reducing manual errors by 70%
-              • Created Shore Simple - a rental listing platform with interactive maps
-              • Reduced API response time by 15% using optimized Axios calls & caching
+              • Built & launched 4 full-scale web applications from scratch <br />
+              • Developed Guardian Anjel - a real-time Military Incident Command Dashboard <br />
+              • Engineered Active Inventory - reducing manual errors by 70% <br />
+              • Created Shore Simple - a rental listing platform with interactive maps <br />
               • Collaborated using Git, Asana, and Agile methodologies
             </div>
           </motion.div>
@@ -81,9 +80,9 @@ const Experiences = () => {
               </div>
             </div>
             <div className="ml-32 text-gray-300">
-              • Enhanced Radix Accounting Software using C# and .NET
-              • Improved report generation by 20%
-              • Developed authentication & role-based access
+              • Enhanced Radix Accounting Software using C# and .NET <br />
+              • Improved report generation by 20% <br />
+              • Developed authentication & role-based access <br />
               • Refactored SQL queries for faster database performance
             </div>
           </motion.div>

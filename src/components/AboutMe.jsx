@@ -29,14 +29,14 @@ const AboutMe = () => {
         variants={itemVariants}
         className="text-sm items-center relative"
       >
-        <div className="flex text-sm items-center relative">
-          <div className="mr-4 text-gray-600">02/07</div>
+        <div className="flex">
+          <div className="mr-4 text-gray-600">02/08</div>
           <div className="font-bold">NEXT CHAPTER</div>
           <div className="ml-4 absolute top-1.5 left-42">
             <img src="/NextIcon.svg" className="h-4" />
           </div>
         </div>
-        <div className="w-2/3">
+        <div className="w-full md:w-2/3">
           <div className="text-5xl py-20 font-bold">ABOUT ME</div>
 
           <motion.div
@@ -63,7 +63,7 @@ const AboutMe = () => {
                 <div className="text-sm mt-2">COMPLETED PROJECTS</div>
               </div>
               <div>
-                <div className="text-6xl font-bold">2+</div>
+                <div className="text-6xl font-bold">1+</div>
                 <div className="text-sm mt-2">YEARS EXPERIENCE</div>
               </div>
             </motion.div>

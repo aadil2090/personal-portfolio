@@ -17,7 +17,7 @@ const Education = () => {
     >
       {/* Header */}
       <div className="flex items-center text-sm mb-12">
-        <div className="mr-4 text-gray-600">05/07</div>
+        <div className="mr-4 text-gray-600">06/08</div>
         <div className="font-bold">NEXT CHAPTER</div>
       </div>
 
@@ -29,7 +29,11 @@ const Education = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-4 top-0 w-[2px] h-full bg-white"></div>
+          <div className="absolute left-4 top-0 w-[2px] h-full bg-white">
+            {/* Timeline Dots */}
+            {/* <div className="absolute -left-[5px] top-2 w-3 h-3 bg-white rounded-full"></div>
+            <div className="absolute -left-[5px] top-[200px] w-3 h-3 bg-white rounded-full"></div> */}
+          </div>
 
           {/* Education 1 */}
           <motion.div

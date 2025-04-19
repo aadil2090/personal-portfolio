@@ -3,7 +3,8 @@ Current Role: React Developer
 Location: Surat, Gujarat, India
 Email: shaikhaadil3927@gmail.com
 Phone: 7990512804
-LinkedIn: in/aadilshaikh1920
+LinkedIn: https://www.linkedin.com/in/aadilshaikh1920
+GitHub: https://github.com/aadil2090
 Summary: A passionate frontend developer with strong focus on React and modern web technologies. Experienced in building full-scale web applications with emphasis on UI/UX and performance optimization.
 
 Experience:

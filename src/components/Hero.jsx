@@ -88,7 +88,7 @@ const Hero = ({ activeSection }) => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="fixed right-12 top-36"
+          className="fixed md:right-2 md:top-24 hidden md:block"
         >
           <div className="leading-12 font-bold text-2xl flex flex-col">
             {navItems.map((nav) => (

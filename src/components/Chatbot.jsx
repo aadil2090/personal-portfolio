@@ -12,7 +12,7 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([
     {
       role: "model",
-      text: `Hey there! 👋 I'm Aadil's AI assistant. Feel free to ask me about his skills, experience, or projects!`,
+      text: `Hey there! 👋 I'm an AI assistant for Aadil's portfolio. Feel free to ask me about his skills, experience, or projects!`,
     },
   ]);
 
@@ -33,24 +33,23 @@ const Chatbot = () => {
 
   const generateResponse = async (query) => {
     try {
-      // Check if it's a greeting
       const isGreeting = /^(hi|hello|hey|greetings|hi there|hello there)$/i.test(query.trim());
-
+  
       const prompt = isGreeting ? 
-        "Respond with a brief, friendly greeting as Aadil's AI assistant. Keep it under 15 words." :
+        "Respond with a friendly, generic greeting for a portfolio AI assistant. Do not mention Aadil by name. Keep it under 15 words and sound welcoming." :
         `You are an AI assistant for Aadil's portfolio. Answer this question: "${query}"
-
-Based on this information:
-${personalInfo}
-
-Response Guidelines:
-1. Be concise - keep responses under 100 words unless specifically asked for details
-2. Format lists with • bullet points and proper spacing
-3. Break long responses into short paragraphs
-4. Links are already in markdown format - use them as is
-5. For skills/technologies, group them by category with bullet points
-6. If asking for clarification, list 2-3 clear options with bullet points`;
-
+  
+  Based on this information:
+  ${personalInfo}
+  
+  Response Guidelines:
+  1. Be concise - keep responses under 100 words unless specifically asked for details
+  2. Break long responses into short paragraphs
+  3. Links are already in markdown format - use them as is
+  4. For skills/technologies, group them by category with points
+  5. If asking for clarification, list 2-3 clear options with points
+  6. Speak as an informative, neutral assistant about Aadil in the third person`;
+  
       const response = await axios.post(import.meta.env.VITE_API_URL, {
         contents: [{
           parts: [{ text: prompt }]
@@ -59,15 +58,10 @@ Response Guidelines:
 
       let formattedResponse = response.data.candidates[0].content.parts[0].text
         .replace(/[*_]/g, "")
-        .replace(/\n{3,}/g, "\n\n") // Remove extra newlines
+        .replace(/\n{3,}/g, "\n\n")
         .trim();
 
-      // Convert markdown links to HTML
-      formattedResponse = formattedResponse.replace(
-        /\[([^\]]+)\]\(([^)]+)\)/g,
-        '<a href="$2" target="_blank" class="text-blue-400 hover:text-blue-300 underline">$1</a>'
-      );
-
+        
       return formattedResponse;
     } catch (err) {
       console.error(err);

@@ -24,20 +24,20 @@ const Services = () => {
       transition={{ duration: 0.8 }}
     >
       <div className="flex text-sm items-center relative">
-        <div className="mr-4 text-gray-600">03/07</div>
+        <div className="mr-4 text-gray-600">03/08</div>
         <div className="font-bold">NEXT CHAPTER</div>
         <div className="ml-4 absolute top-1.5 left-42">
           <img src="/NextIcon.svg" className="h-4" />
         </div>
       </div>
-      <div className="w-2/3">
+      <div className="w-full">
         <div className="text-5xl py-20 font-bold">MY SERVICES</div>
 
         <motion.div
           initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
           transition={{ duration: 0.2, ease: "easeOut", delay: 0.8 }}
-          className="text-xl grid grid-cols-3 gap-8"
+          className="text-xl grid grid-cols-1 md:grid-cols-3 md:gap-8 md:w-2/3 w-full"
         >
           <motion.div
             variants={cardVariants}
